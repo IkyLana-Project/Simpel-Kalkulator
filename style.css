@@ -1,0 +1,144 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins";
+}
+
+body {
+    background: rgb(6, 32, 43);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+}
+
+#divide_byZero{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#divide_byZero.active{
+    animation: gerak 1s alternate infinite;
+    -webkit-animation: gerak 1s alternate infinite;
+    animation-timing-function: cubic-bezier(0.68, 0, 0.265, 1);
+    -webkit-animation-timing-function: cubic-bezier(0.68, 0, 0.265, 1);
+    -moz-animation-timing-function: cubic-bezier(0.68, 0, 0.265, 1);
+    -o-animation-timing-function: cubic-bezier(0.68, 0, 0.265, 1);
+}
+
+@keyframes gerak {
+    to{
+        font-weight: bold;
+        font-size: 5em;
+        color: red;
+        background: rgba(0, 0, 0, 0.904);
+}
+}
+
+h1{
+    background: linear-gradient(90deg, cyan, yellow);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+}
+
+h3{
+    background: linear-gradient(90deg, cyan, rgb(234, 0, 255));
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    animation: color 6s linear infinite alternate;
+    -webkit-animation: color 6s linear infinite alternate;
+}
+
+@keyframes color {
+    to{
+        background-position-x: 10em;
+    }
+}
+
+.calculator{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: calc(4 * 100px);
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+    background: linear-gradient(rgb(0, 36, 114), cyan, rgb(0, 36, 114));
+}
+
+.calculator-display{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    font-size: 1.5em;
+    min-height: 3.5em;
+}
+
+.calculator-display .top{
+    height: 1em;
+}
+
+.calculator-display .bottom{
+    height: 2em;
+}
+
+.calculator-display .top, .calculator-display .bottom{
+    padding: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(5, 100px);
+}
+
+.calculator-keys > button{
+    font-size: 1.5em;
+    background: rgba(255, 255, 255, 0.75);
+    outline: none;
+    border: 1px solid #06202b70;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: all .15s;
+    -webkit-transition: all .15s;
+    -moz-transition: all .15s;
+    -ms-transition: all .15s;
+    -o-transition: all .15s;
+}
+
+.calculator-keys > button:hover{
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    color: rgb(0, 159, 199);
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 0 7px black inset;
+}
+
+.calculator-keys #sama-dengan{
+    grid-row: 2 / -1;
+    grid-column: 4;
+}
